@@ -2,7 +2,7 @@
 -- +migrate Up
 create table product
 (
-    id           serial
+    id           integer generated always as identity
         constraint product_pk
             primary key,
     description  varchar(500),

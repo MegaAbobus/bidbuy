@@ -2,7 +2,7 @@
 -- +migrate Up
 create table "user"
 (
-    id               serial
+    id              integer generated always as identity
         constraint user_pk
             primary key,
     phone_number     varchar(12),

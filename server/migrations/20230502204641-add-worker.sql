@@ -2,7 +2,7 @@
 -- +migrate Up
 create table worker
 (
-    id                     serial
+    id          integer generated always as identity
         constraint worker_pk
             primary key,
     name                   varchar(255),
