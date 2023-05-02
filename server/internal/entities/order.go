@@ -1,9 +1,9 @@
 package entities
 
 type Order struct {
-	ID      uint
-	UserID  uint
-	Address string
-	Price   float32
-	Status  string
+	ID      uint    `json:"id"`
+	UserID  uint    `json:"userId"`
+	Address string  `json:"address"`
+	Price   float32 `json:"price"`
+	Status  string  `json:"status"`
 }

@@ -31,7 +31,13 @@ func CreateOrder(service order.Service) fiber.Handler {
 func UpdateOrder(service order.Service) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var requestBody entities.Order
-		err := c.BodyParser(&requestBody)
+		err := c.ParamsParser(&requestBody)
+		if err != nil {
+			c.Status(http.StatusBadRequest)
+			return c.JSON(presenter.OrderErrorResponse(err))
+		}
+
+		err = c.BodyParser(&requestBody)
 		if err != nil {
 			c.Status(http.StatusBadRequest)
 			return c.JSON(presenter.OrderErrorResponse(err))

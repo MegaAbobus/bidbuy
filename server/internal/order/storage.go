@@ -29,7 +29,7 @@ func NewStorage(conn *pgx.Conn) Storage {
 
 func (st *storage) CreateOrder(ctx context.Context, order *entities.Order) (*entities.Order, error) {
 	query := `
-	insert into order
+	insert into "order"
 	(
 		user_id, address, price, status
 	)
@@ -87,7 +87,7 @@ func (st *storage) UpdateOrder(ctx context.Context, order *entities.Order) (*ent
 	)
 
 	query := `
-	update order
+	update "order"
 	set user_id = $2, address = $3, price = $4, status = $5
 	where id = $1
 	returning id, user_id, address, price, status`
@@ -152,7 +152,7 @@ func (st *storage) ListOrder(ctx context.Context) (*[]presenter.Order, error) {
 }
 
 func (st *storage) DeleteOrder(ctx context.Context, ID uint) error {
-	query := `delete from order where id = $1`
+	query := `delete from "order" where id = $1`
 
 	commandTag, err := st.conn.Exec(ctx, query, ID)
 	if err != nil {
