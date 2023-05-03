@@ -1,9 +1,10 @@
 package main
 
 import (
+	"bidbuy/internal/app/order"
+	"bidbuy/internal/app/product"
+	"bidbuy/internal/app/user"
 	"bidbuy/internal/handler"
-	"bidbuy/internal/order"
-	"bidbuy/internal/user"
 	"context"
 	"log"
 
@@ -13,8 +14,9 @@ import (
 )
 
 type serverOpts struct {
-	userSvc  user.Service
-	orderSvc order.Service
+	userSvc    user.Service
+	productSvc product.Service
+	orderSvc   order.Service
 }
 
 func main() {
@@ -28,6 +30,9 @@ func main() {
 	userStorage := user.NewStorage(conn)
 	userService := user.NewService(userStorage)
 
+	productStorage := product.NewStorage(conn)
+	productService := product.NewService(productStorage)
+
 	orderStorage := order.NewStorage(conn)
 	orderService := order.NewService(orderStorage)
 
@@ -35,8 +40,9 @@ func main() {
 	app.Use(cors.New())
 
 	initRoutes(app, serverOpts{
-		userSvc:  userService,
-		orderSvc: orderService,
+		userSvc:    userService,
+		productSvc: productService,
+		orderSvc:   orderService,
 	})
 
 	app.Listen(":8080")
@@ -64,6 +70,13 @@ func initRoutes(app *fiber.App, opts serverOpts) {
 	users.Delete("/:id", handler.DeleteUser(opts.userSvc))
 	users.Patch("/:id", handler.UpdateUser(opts.userSvc))
 	users.Get("/:id", handler.GetUser(opts.userSvc))
+
+	products := api.Group("/products")
+	products.Post("/", handler.CreateProduct(opts.productSvc))
+	products.Get("/", handler.ListProducts(opts.productSvc))
+	products.Delete("/:id", handler.DeleteProduct(opts.productSvc))
+	products.Patch("/:id", handler.UpdateProduct(opts.productSvc))
+	products.Get("/:id", handler.GetProduct(opts.productSvc))
 
 	orders := api.Group("/orders")
 	orders.Post("/", handler.CreateOrder(opts.orderSvc))

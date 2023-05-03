@@ -1,9 +1,9 @@
 package handler
 
 import (
+	"bidbuy/internal/app/user"
 	"bidbuy/internal/entities"
 	"bidbuy/internal/presenter"
-	"bidbuy/internal/user"
 	"context"
 	"net/http"
 
