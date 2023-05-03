@@ -3,6 +3,7 @@ package main
 import (
 	"bidbuy/internal/handler"
 	"bidbuy/internal/order"
+	"bidbuy/internal/user"
 	"context"
 	"log"
 
@@ -10,6 +11,11 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/jackc/pgx/v5"
 )
+
+type serverOpts struct {
+	userSvc  user.Service
+	orderSvc order.Service
+}
 
 func main() {
 	ctx := context.Background()
@@ -19,13 +25,19 @@ func main() {
 		log.Fatal(err)
 	}
 
+	userStorage := user.NewStorage(conn)
+	userService := user.NewService(userStorage)
+
 	orderStorage := order.NewStorage(conn)
 	orderService := order.NewService(orderStorage)
 
 	app := fiber.New()
 	app.Use(cors.New())
 
-	initRoutes(app, orderService)
+	initRoutes(app, serverOpts{
+		userSvc:  userService,
+		orderSvc: orderService,
+	})
 
 	app.Listen(":8080")
 }
@@ -43,13 +55,20 @@ func connect(ctx context.Context) (*pgx.Conn, error) {
 	return conn, nil
 }
 
-func initRoutes(app *fiber.App, service order.Service) {
+func initRoutes(app *fiber.App, opts serverOpts) {
 	api := app.Group("/api/v1")
 
+	users := api.Group("/users")
+	users.Post("/", handler.CreateUser(opts.userSvc))
+	users.Get("/", handler.ListUsers(opts.userSvc))
+	users.Delete("/:id", handler.DeleteUser(opts.userSvc))
+	users.Patch("/:id", handler.UpdateUser(opts.userSvc))
+	users.Get("/:id", handler.GetUser(opts.userSvc))
+
 	orders := api.Group("/orders")
-	orders.Post("/", handler.CreateOrder(service))
-	orders.Get("/", handler.ListOrders(service))
-	orders.Delete("/:id", handler.DeleteOrder(service))
-	orders.Patch("/:id", handler.UpdateOrder(service))
-	orders.Get("/:id", handler.GetOrder(service))
+	orders.Post("/", handler.CreateOrder(opts.orderSvc))
+	orders.Get("/", handler.ListOrders(opts.orderSvc))
+	orders.Delete("/:id", handler.DeleteOrder(opts.orderSvc))
+	orders.Patch("/:id", handler.UpdateOrder(opts.orderSvc))
+	orders.Get("/:id", handler.GetOrder(opts.orderSvc))
 }

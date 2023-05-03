@@ -7,17 +7,17 @@ import (
 )
 
 type Order struct {
-	ID      uint
-	UserId  uint
-	Address string
-	Price   float32
-	Status  string
+	ID      uint    `json:"id"`
+	UserID  uint    `json:"userId"`
+	Address string  `json:"address"`
+	Price   float32 `json:"price"`
+	Status  string  `json:"status"`
 }
 
 func OrderSuccessResponse(data *entities.Order) *fiber.Map {
 	order := Order{
 		ID:      data.ID,
-		UserId:  data.UserID,
+		UserID:  data.UserID,
 		Address: data.Address,
 		Price:   data.Price,
 		Status:  data.Status,
