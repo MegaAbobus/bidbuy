@@ -1,0 +1,102 @@
+.contener {
+  margin: 70px auto;
+}
+
+.field input {
+  height: 45px;
+  width: 100%;
+  max-width: 390px;
+  font-size: 14px;
+  line-height: 16px;
+  border: 2px solid #E9F2FF;
+  border-radius: 5px;
+  padding-left: 25px;
+  color: #3B5983;
+}
+
+.title {
+  color: #475272;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 23px;
+  margin-bottom: 38px;
+}
+
+.contener {
+  max-width: 415px;
+  background-color: #ffff;
+  box-shadow: 0 6px 50px rgba(217, 229, 255, 0.7);
+  border-radius: 20px;
+  padding: 38px 30px;
+}
+
+.field {
+  margin-bottom: 13px;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px 0 25px 0;
+  font-size: 15px;
+  line-height: 16px;
+  height: 35px;
+  width: 100%;
+  max-width: 390px;
+  background-color: #ffb217;
+  border: #ffff;
+  border-radius: 5px;
+  color: #ffff;
+  text-align: center;
+  line-height: 45px;
+}
+
+.btn:hover {
+  background-color: #ffbc37;
+}
+
+.btn_up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 25px 0 15px 0;
+  font-size: 15px;
+  line-height: 16px;
+  height: 35px;
+  width: 100%;
+  max-width: 390px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 5px;
+}
+
+.btn_up button {
+  font-size: 15px;
+  width: 100%;
+  max-width: 390px;
+  line-height: 16px;
+  height: 35px;
+  color: #ffff;
+  border-radius: 5px;
+  background-color: #3c455e;
+  border: #ffff;
+}
+
+.btn_up:hover,
+.btn_up button:hover {
+  background-color: #4b5675;
+}
+
+.btn_up a {
+  color: #ffff;
+  text-decoration: none;
+}

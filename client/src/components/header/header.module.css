@@ -1,0 +1,47 @@
+.contener {
+  background-color: rgb(49, 57, 77);
+  display: block;
+}
+
+.content {
+  margin: 0 100px 0 60px;
+  padding: 15px 0 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.color {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.color:hover {
+  color: #a5bcf1;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.num {
+  margin-left: 40px;
+  color: white;
+}
+
+.link a {
+  display: flex;
+  justify-content: flex-start;
+}
+
+img {
+  width: 300px;
+}
