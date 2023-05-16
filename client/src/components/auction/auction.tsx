@@ -99,8 +99,8 @@ export const Auction = () => {
           <div>
             <div className={style.titlecategory}>Цена</div>
             <div className={style.inp}>
-              <input type="number" placeholder="0" />
-              <input type="number" placeholder="1000000" />
+              <input type="number" placeholder="от 0" />
+              <input type="number" placeholder="до 1000000" />
             </div>
           </div>
           <div className={style.category}>

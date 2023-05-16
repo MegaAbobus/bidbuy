@@ -22,7 +22,7 @@
 .product {
   display: inline-block;
   flex-direction: row;
-  width: 250px;
+  width: 240px;
   border: 1px solid #ffff;
   align-items: center;
   text-align: left;
