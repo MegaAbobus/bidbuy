@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .contant {
   display: flex;
   justify-content: space-between;
@@ -11,14 +15,20 @@
 }
 
 .btn {
-  margin-right: 150px;
+  margin-right: 75px;
   margin-bottom: 5px;
   align-items: center;
   justify-content: center;
+  display: flex;
 }
 
 .btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 170px;
+  font-size: 15px;
+  font-weight: 200;
   height: 40px;
   background-color: #ffff;
   color: #2D2D2D;
@@ -27,6 +37,27 @@
 }
 
 .btn button:hover {
+  color: #ffff;
+  border: 1px solid #61739c;
+  background-color: #61739c;
+}
+
+.auction {
+  display: flex;
+  width: 130px;
+  height: 38.4px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2D2D2D;
+  background-color: #ffff;
+  border-radius: 10px;
+  border: 1px solid #2D2D2D;
+  align-items: center;
+  justify-content: center;
+}
+
+.auction:hover {
   color: #ffff;
   border: 1px solid #61739c;
   background-color: #61739c;
