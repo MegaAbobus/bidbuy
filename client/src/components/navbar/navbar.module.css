@@ -1,0 +1,133 @@
+a {
+  text-decoration: none;
+}
+
+.contant {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.btnserch {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  margin-right: 75px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  font-size: 15px;
+  font-weight: 200;
+  height: 40px;
+  background-color: #ffff;
+  color: #2D2D2D;
+  border-radius: 10px;
+  border: 1px solid #2D2D2D;
+}
+
+.btn button:hover {
+  color: #ffff;
+  border: 1px solid #61739c;
+  background-color: #61739c;
+}
+
+.auction {
+  display: flex;
+  width: 130px;
+  height: 38.4px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2D2D2D;
+  background-color: #ffff;
+  border-radius: 10px;
+  border: 1px solid #2D2D2D;
+  align-items: center;
+  justify-content: center;
+}
+
+.auction:hover {
+  color: #ffff;
+  border: 1px solid #61739c;
+  background-color: #61739c;
+}
+
+.menu {
+  margin-right: 7px;
+}
+
+form {
+  position: relative;
+  width: 600px;
+  margin: 0 auto 10px auto;
+  background: #ffff;
+  border-bottom: 1px solid #000;
+}
+
+form:hover {
+  border-bottom: 1px solid #61739c;
+}
+
+.sub button {
+  border: none;
+  outline: none;
+  background: #ffff;
+}
+
+.sub button:hover {
+  color: #61739c;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+
+.sub button {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: end;
+}
+
+.sign {
+  margin-right: 35px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  color: #31394D;
+}
+
+.sign:last-child {
+  margin-right: 0;
+}
+
+.sign:hover {
+  color: #61739c;
+}
