@@ -1,0 +1,106 @@
+.content {
+  width: 60px;
+  height: 60px;
+  background-color: #ffb217;
+  border-radius: 100%;
+  margin: 0 33px 35px 0;
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.mes {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.icon {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.bg {
+  margin: 0 33px 35px 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.popup {
+  padding: 20px;
+  background-color: #ffff;
+  box-shadow:
+    0 0 6px #bbbbbb,
+    0 0 8px #dddddd;
+  border-radius: 12px;
+  background-color: #ffff;
+  height: 620px;
+  width: 370px;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffb217;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #ffff;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.head span {
+  font-weight: 100;
+}
+
+.btn {
+  display: flex;
+  justify-content: end;
+  padding: 0 0 10px 0;
+  margin-right: -10px;
+  margin-top: -10px;
+}
+
+.btnicon {
+  color: #bbbbbb;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.main {
+  margin-top: 360px;
+}
+
+.hi {
+  width: 320px;
+  display: flex;
+}
+
+.assistant {
+  margin-right: 20px;
+  color: rgb(49, 57, 77);
+  font-size: 40px;
+}
+
+.hi span {
+  background-color: rgb(242, 242, 242);
+  padding: 10px 0 10px 15px;
+  border-radius: 12px;
+}
+
+.inp {
+  margin-top: 70px;
+  border-top: 1px solid #bbbbbb;
+}
+
+.inp input {
+  padding-top: 5px;
+  font-size: 15px;
+}

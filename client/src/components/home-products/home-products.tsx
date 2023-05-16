@@ -1,6 +1,7 @@
 import { useState } from "react";
 import style from "./home-products.module.css";
 import { Link } from "react-router-dom";
+import { Messenger } from "../messenger/messenger";
 
 export const HomeProducts = () => {
   const [products, setProducts] = useState([
@@ -67,6 +68,7 @@ export const HomeProducts = () => {
       <div className={style.title}>
         <h2>Товары</h2>
       </div>
+      <Messenger />
       {products.map((product) => (
         <div className={style.product} key={product.id}>
           <Link className={style.card} to={"/"}>
