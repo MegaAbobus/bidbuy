@@ -18,6 +18,9 @@ export const NavBar = () => {
               <FontAwesomeIcon icon={faBars} className={style.menu} />
               Каталог товаров
             </button>
+            <Link to={"/auction"} className={style.auction}>
+              Аукцион
+            </Link>
           </div>
           <div className={style.serch}>
             <form className={style.sub} action="" method="get">
