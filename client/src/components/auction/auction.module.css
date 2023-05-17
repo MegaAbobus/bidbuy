@@ -142,12 +142,15 @@
 .cont {
   display: flex;
   flex-direction: column;
-  max-height: 870px;
+  max-height: 800px;
   padding: 0 15px;
+  margin-bottom: 20px;
   border-radius: 12px;
   box-shadow:
     0 0 6px #bbbbbb,
     0 0 8px #dddddd;
+  position: sticky;
+  top: 0;
 }
 
 .cont h3 {
