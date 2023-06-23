@@ -1,0 +1,32 @@
+run:
+  go: "1.20"
+output:
+  print-issued-lines: true
+  print-linter-name: true
+  unique-by-line: true
+  path-prefix: ""
+  format: "colored-line-number"
+linters:
+  enable-all: false
+  disable-all: false
+  fast: false
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    - asciicheck
+    - containedctx
+    - deadcode
+    - decorder
+    - dogsled
+    - errname
+    - exhaustruct
+    - dupword
+    - godot
+    - gofmt
+    - whitespace
+    - unparam

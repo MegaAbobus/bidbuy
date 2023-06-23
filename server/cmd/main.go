@@ -51,7 +51,9 @@ func main() {
 		workerSvc:  workerService,
 	})
 
-	app.Listen(":8080")
+	if err := app.Listen(":8080"); err != nil {
+		log.Fatalf("fatal %s", err)
+	}
 }
 
 func connect(ctx context.Context) (*pgx.Conn, error) {
