@@ -1,4 +1,4 @@
-package handler
+package server
 
 import (
 	"bidbuy/internal/app/order"
@@ -10,7 +10,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func CreateOrder(service order.Service) fiber.Handler {
+func (s *Server) createOrder(service order.Service) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var requestBody entities.Order
 		err := c.BodyParser(&requestBody)
@@ -28,7 +28,7 @@ func CreateOrder(service order.Service) fiber.Handler {
 	}
 }
 
-func UpdateOrder(service order.Service) fiber.Handler {
+func (s *Server) updateOrder(service order.Service) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var requestBody entities.Order
 		err := c.ParamsParser(&requestBody)
@@ -52,7 +52,7 @@ func UpdateOrder(service order.Service) fiber.Handler {
 	}
 }
 
-func DeleteOrder(service order.Service) fiber.Handler {
+func (s *Server) deleteOrder(service order.Service) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var requestParam entities.DeleteRequest
 		err := c.ParamsParser(&requestParam)
@@ -74,7 +74,7 @@ func DeleteOrder(service order.Service) fiber.Handler {
 	}
 }
 
-func ListOrders(service order.Service) fiber.Handler {
+func (s *Server) listOrders(service order.Service) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		fetched, err := service.FetchOrders(context.Background())
 		if err != nil {
@@ -85,7 +85,7 @@ func ListOrders(service order.Service) fiber.Handler {
 	}
 }
 
-func GetOrder(service order.Service) fiber.Handler {
+func (s *Server) getOrder(service order.Service) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var requestParam entities.GetRequest
 		err := c.ParamsParser(&requestParam)
